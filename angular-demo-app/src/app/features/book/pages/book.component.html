@@ -1,0 +1,17 @@
+<h3>Result of GET /api/get-book</h3>
+
+<p>
+  Name: {{book.name}}<br>
+  Isbn: {{book.isbn}}
+</p>
+
+<ul class="list-group">
+  <li
+    *ngFor="let book of books"
+    class="list-group-item">
+    {{book.name}}
+    {{book.isbn}}
+  </li>
+</ul>
+
+<a routerLink="/">Home</a>
