@@ -18,8 +18,9 @@ export class BookService {
 
   getBooks(count: Number): Observable<Array<Book>> {
     let params = new HttpParams();
-    params.append("count", count.toString());
+    params = params.append("count", count.toString());
     return this.http.get<Array<Book>>(this.BASE_URL + 'books', {params: params})
+    // return this.http.get<Array<Book>>(this.BASE_URL + 'books?count=' + count.toString());
   }
 
 }
