@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: book-test-api
+  profiles:
+    active: default
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    database: h2
+  datasource:
+    hikari:
+      jdbc-url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1
+      username: sa
+      password:
+      driver-class-name: org.h2.Driver
+  sql:
+    init:
+      mode: embedded
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  security:
+    user:
+      name: user
+      password: 1
+server:
+  port: 8080
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
