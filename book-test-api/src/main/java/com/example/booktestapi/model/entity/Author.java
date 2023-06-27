@@ -1,5 +1,6 @@
 package com.example.booktestapi.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -28,6 +29,7 @@ public class Author extends BaseEntity {
 
     @OneToMany
     @ToString.Exclude
+    @JsonIgnore
     private List<Book> books;
 
     @Override
